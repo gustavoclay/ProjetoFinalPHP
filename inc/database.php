@@ -2,7 +2,7 @@
 
 /*Este arquivo possui as funções para fabricar conexões com o banco de dados*/
 
-mysqli_report(MYSQL_REPORT_STRICT);
+mysqli_report(MYSQLI_REPORT_STRICT);
 
 function open_database() {
 	try {
