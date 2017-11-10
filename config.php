@@ -24,4 +24,11 @@ if ( !defined('BASEURL') )
 /** caminho do arquivo de banco de dados **/
 if ( !defined('DBAPI') )
 	define('DBAPI', ABSPATH . 'inc/database.php');
+
+/*caminho do arquivo header*/
+define('HEADER_TEMPLATE', ABSPATH . 'inc/header.php');
+
+/*caminho do arquivo footer*/
+define('FOOTER_TEMPLATE', ABSPATH . 'inc/footer.php');
+
 ?>
