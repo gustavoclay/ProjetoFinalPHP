@@ -28,17 +28,17 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="<?php echo BASEURL; ?>index.php" class="navbar-brand">CRUD</a>
+				<a href="<?php echo BASEURL; ?>index.php" class="navbar-brand">IMC</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-							Clientes <span class="caret"></span>
+							Usuários <span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
-							<li><a href="<?php echo BASEURL; ?>customers">Gerenciar Clientes</a></li>
-							<li><a href="<?php echo BASEURL; ?>customers/add.php">Novo Cliente</a></li>
+							<li><a href="<?php echo BASEURL; ?>customers">Gerenciar Usuários</a></li>
+							<li><a href="<?php echo BASEURL; ?>customers/add.php">Novo Usuário</a></li>
 						</ul>
 					</li>
 				</ul>
