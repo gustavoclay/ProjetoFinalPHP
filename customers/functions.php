@@ -54,7 +54,7 @@ function edit() {
 
 			global $customer;
 			$customer = find('customers', $id);
-		} 
+		}
 	} else {
 		header('location: index.php');
 	}
@@ -68,6 +68,15 @@ function view($id = null) {
 	$customer = find('customers', $id);
 }
 
+/**
+ *  Exclusão de um Cliente
+ */
+function delete($id = null) {
 
+	global $customer;
+	$customer = remove('customers', $id);
+
+	header('location: index.php');
+}
 
 ?>
