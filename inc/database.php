@@ -84,7 +84,7 @@ function save($table = null, $data = null) {
 	$columns = null;
 	$values = null;
 
-  	print_r($data);
+  	//print_r($data);
 
 	foreach ($data as $key => $value) {
 		$columns .= trim($key, "'") . ",";
@@ -173,5 +173,65 @@ function remove( $table = null, $id = null ) {
 
 	close_database($database);
 }
+
+
+//IMC
+
+/**
+ * Pesquisa um Registro pelo ID em uma tabela - imc
+ */
+
+function find_imc ($table = null, $id = null) {
+
+	$database = open_database();
+	$found = null;
+
+	try {
+		if ($id) {
+			$sql = "SELECT * FROM " . $table . " WHERE customers_idcustomers= " . $id;
+			$result = $database->query($sql);
+
+			if ($result->num_rows > 0) {
+				//$found = $result->fetch_assoc();
+				$found = array();
+				while ($row = $result->fetch_assoc()) {
+          			array_push($found, $row);
+      			}
+			}
+
+		} else {
+
+			$sql = "SELECT * FROM " . $table;
+			$result = $database->query($sql);
+
+			if ($result->num_rows > 0) {
+				$found = $result->fetch_all(MYSQLI_ASSOC);
+
+		/* Metodo alternativo
+        $found = array();
+
+        while ($row = $result->fetch_assoc()) {
+          array_push($found, $row);
+      } */
+
+  }
+
+}
+} catch (Exception $e) {
+	$_SESSION['message'] = $e->getMessage();
+	$_SESSION['type'] = 'danger';
+}
+close_database($database);
+return $found;
+}
+
+/**
+ *  Pesquisa todos os Registros de uma tabela
+ */
+
+function find_all_imc($table) {
+	return find_imc($table);
+}
+
 
 ?>

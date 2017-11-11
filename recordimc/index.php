@@ -11,7 +11,6 @@ index();
 			<h2>Usuários</h2>
 		</div>
 		<div class="col-sm-6 text-right h2">
-			<a class="btn btn-primary" href="add.php"><i class="fa fa-plus"></i> Novo Usuários</a>
 			<a class="btn btn-default" href="index.php"><i class="fa fa-refresh"></i> Atualizar</a>
 		</div>
 	</div>
@@ -45,12 +44,9 @@ index();
 					<td><?php echo $customer['name']; ?></td>
 					<td><?php echo $customer['email']; ?></td>
 					<td><?php echo $customer['modified']; ?></td>
-					<td class="actions text-right">
-						<a href="view.php?idcustomers=<?php echo $customer['idcustomers']; ?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>
-						<a href="edit.php?idcustomers=<?php echo $customer['idcustomers']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Editar</a>
-						<a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $customer['idcustomers']; ?>">
-							<i class="fa fa-trash"></i> Excluir
-						</a>
+					<td class="actions ">
+						<a href="view.php?idcustomers=<?php echo $customer['idcustomers']; ?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Controle de IMC</a>
+
 					</td>
 				</tr>
 			<?php endforeach; ?>
@@ -61,7 +57,5 @@ index();
 		<?php endif; ?>
 	</tbody>
 </table>
-
-<?php include('modal.php'); ?>
 
 <?php include(FOOTER_TEMPLATE); ?>

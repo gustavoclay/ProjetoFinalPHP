@@ -11,26 +11,28 @@
 
 	<div class="row">
 		<div class="col-xs-6 col-sm-3 col-md-2">
-			<a href="customers/add.php" class="btn btn-primary">
+			<a href="customers" class="btn btn-default">
 				<div class="row">
 					<div class="col-xs-12 text-center">
-						<i class="fa fa-plus fa-5x"></i>
+						<i class="fa fa-user-circle fa-5x" aria-hidden="true"></i>
 					</div>
 					<div class="col-xs-12 text-center">
-						<p>Novo Usuário</p>
+						<br />
+						<p>Usuário</p>
 					</div>
 				</div>
 			</a>
 		</div>
 
 		<div class="col-xs-6 col-sm-3 col-md-2">
-			<a href="customers" class="btn btn-default">
+			<a href="recordimc" class="btn btn-default">
 				<div class="row">
 					<div class="col-xs-12 text-center">
-						<i class="fa fa-user fa-5x"></i>
+						<i class="fa fa-heartbeat fa-5x" aria-hidden="true"></i>
 					</div>
 					<div class="col-xs-12 text-center">
-						<p>Usuário</p>
+						<br />
+						<p>Controle de IMC</p>
 					</div>
 				</div>
 			</a>

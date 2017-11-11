@@ -5,7 +5,7 @@ edit();
 
 <?php include(HEADER_TEMPLATE); ?>
 
-<h2>Atualizar Cliente</h2>
+<h2>Atualizar Usuários</h2>
 
 <form action="edit.php?idcustomers=<?php echo $customer['idcustomers']; ?>" method="post">
   <hr />
