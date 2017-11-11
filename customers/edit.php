@@ -1,5 +1,5 @@
-<?php 
-require_once('functions.php'); 
+<?php
+require_once('functions.php');
 edit();
 ?>
 
@@ -7,7 +7,7 @@ edit();
 
 <h2>Atualizar Cliente</h2>
 
-<form action="edit.php?id=<?php echo $customer['id']; ?>" method="post">
+<form action="edit.php?idcustomers=<?php echo $customer['idcustomers']; ?>" method="post">
   <hr />
   <div class="row">
     <div class="form-group col-md-7">

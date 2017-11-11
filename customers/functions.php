@@ -27,7 +27,7 @@ function add() {
 		$customer['modified'] = $customer['created'] = $today->format("Y-m-d H:i:s");
 
 		save('customers', $customer);
-		header('location: index.php');
+		//header('location: index.php');
 	}
 }
 
@@ -39,21 +39,21 @@ function edit() {
 
 	$now = date_create('now', new DateTimeZone('America/Sao_Paulo'));
 
-	if (isset($_GET['id'])) {
+	if (isset($_GET['idcustomers'])) {
 
-		$id = $_GET['id'];
+		$idcustomers = $_GET['idcustomers'];
 
 		if (isset($_POST['customer'])) {
 
 			$customer = $_POST['customer'];
 			$customer['modified'] = $now->format("Y-m-d H:i:s");
 
-			update('customers', $id, $customer);
+			update('customers', $idcustomers, $customer);
 			header('location: index.php');
 		} else {
 
 			global $customer;
-			$customer = find('customers', $id);
+			$customer = find('customers', $idcustomers);
 		}
 	} else {
 		header('location: index.php');
@@ -63,18 +63,18 @@ function edit() {
 /**
  *  Visualização de um Cliente
  */
-function view($id = null) {
+function view($idcustomers = null) {
 	global $customer;
-	$customer = find('customers', $id);
+	$customer = find('customers', $idcustomers);
 }
 
 /**
  *  Exclusão de um Cliente
  */
-function delete($id = null) {
+function delete($idcustomers = null) {
 
 	global $customer;
-	$customer = remove('customers', $id);
+	$customer = remove('customers', $idcustomers);
 
 	header('location: index.php');
 }

@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once('functions.php'); 
 add();
 ?>
@@ -26,7 +26,7 @@ add();
       <input type="text" class="form-control" name="customer['created']" disabled>
     </div>
   </div>
- 
+
   <div id="actions" class="row">
     <div class="col-md-12">
       <button type="submit" class="btn btn-primary">Salvar</button>

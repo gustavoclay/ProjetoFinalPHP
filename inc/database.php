@@ -33,7 +33,7 @@ function find ($table = null, $id = null) {
 
 	try {
 		if ($id) {
-			$sql = "SELECT * FROM " . $table . " WHERE id= " . $id;
+			$sql = "SELECT * FROM " . $table . " WHERE idcustomers= " . $id;
 			$result = $database->query($sql);
 
 			if ($result->num_rows > 0) {
@@ -84,7 +84,7 @@ function save($table = null, $data = null) {
 	$columns = null;
 	$values = null;
 
-  //print_r($data);
+  	print_r($data);
 
 	foreach ($data as $key => $value) {
 		$columns .= trim($key, "'") . ",";
@@ -95,19 +95,19 @@ function save($table = null, $data = null) {
 	$columns = rtrim($columns, ',');
 	$values = rtrim($values, ',');
 
-	$sql = "INSERT INTO " . $table . "($columns)" . " VALUES " . "($values);";
-
+	$sql = "INSERT INTO " . $table . " ($columns) " . " VALUES " . "($values);";
+	print_r($sql);
 	try {
 		$database->query($sql);
 
 		$_SESSION['message'] = 'Registro cadastrado com sucesso.';
 		$_SESSION['type'] = 'success';
 
-	} catch (Exception $e) { 
+	} catch (Exception $e) {
 
 		$_SESSION['message'] = 'Nao foi possivel realizar a operacao.';
 		$_SESSION['type'] = 'danger';
-	} 
+	}
 
 	close_database($database);
 }
@@ -130,7 +130,7 @@ function update($table = null, $id = 0, $data = null) {
 
 	$sql  = "UPDATE " . $table;
 	$sql .= " SET $items";
-	$sql .= " WHERE id=" . $id . ";";
+	$sql .= " WHERE idcustomers=" . $id . ";";
 
 	try {
 		$database->query($sql);
@@ -157,7 +157,7 @@ function remove( $table = null, $id = null ) {
 	try {
 		if ($id) {
 
-			$sql = "DELETE FROM " . $table . " WHERE id = " . $id;
+			$sql = "DELETE FROM " . $table . " WHERE idcustomers = " . $id;
 			$result = $database->query($sql);
 
 			if ($result = $database->query($sql)) {

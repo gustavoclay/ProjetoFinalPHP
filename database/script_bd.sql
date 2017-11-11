@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `imc_control_crud`.`customers` (
   `idcustomers` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
-  `criated` DATETIME NOT NULL,
+  `created` DATETIME NOT NULL,
   `modified` DATETIME NOT NULL,
   PRIMARY KEY (`idcustomers`))
 ENGINE = InnoDB;

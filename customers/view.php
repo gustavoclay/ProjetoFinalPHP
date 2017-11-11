@@ -1,11 +1,11 @@
 <?php
-	require_once('functions.php'); 
-	view($_GET['id']);
+	require_once('functions.php');
+	view($_GET['idcustomers']);
 ?>
 
 <?php include(HEADER_TEMPLATE); ?>
 
-<h2>Usuário<?php echo $customer['id']; ?></h2>
+<h2>Usuário #<?php echo $customer['idcustomers']; ?></h2>
 <hr>
 
 <?php if (!empty($_SESSION['message'])) : ?>
@@ -25,7 +25,7 @@
 
 <div id="actions" class="row">
 	<div class="col-md-12">
-		<a href="edit.php?id=<?php echo $customer['id']; ?>" class="btn btn-primary">Editar</a>
+		<a href="edit.php?idcustomers=<?php echo $customer['idcustomers']; ?>" class="btn btn-primary">Editar</a>
 		<a href="index.php" class="btn btn-default">Voltar</a>
 	</div>
 </div>

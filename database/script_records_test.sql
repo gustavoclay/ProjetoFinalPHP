@@ -1,4 +1,4 @@
-INSERT INTO `customers` ( `name`, `email`, `criated`, `modified`)
+INSERT INTO `customers` ( `name`, `email`, `created`, `modified`)
 VALUES ('Joao da silva', 'joao@gmail.com', '2016-05-24 00:00:00', '2016-05-24 00:00:00'),
 ('Maria da Silva', 'maria@gmail.com', '2016-05-24 00:00:00', '2016-05-24 00:00:00'),
 ('Juana da silva', 'juana@gmail.com', '2016-05-24 00:00:00', '2016-05-24 00:00:00'),
