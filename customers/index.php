@@ -32,7 +32,7 @@ index();
 		<tr>
 			<th>ID</th>
 			<th width="25%">Nome</th>
-			<th width="25%">Email/th>
+			<th width="25%">Email</th>
 			<th>Atualizado em</th>
 			<th>Opções</th>
 		</tr>
