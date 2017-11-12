@@ -45,21 +45,30 @@ function indeximc() {
  */
 function addimc() {
 
-	if (!empty($_POST['idcustomer'])) {
-		$record['customers_idcustomers']= $_REQUEST['customers_idcustomers'];
+	if (!empty($_POST['record'])) {
 
 		$today = date_create('now', new DateTimeZone('America/Sao_Paulo'));
+		$record = $_POST['record'];
+		$record['customers_idcustomers'] = $_GET['id'];
+		$record['imc'] = 26;
 		$record['daterecord'] = $today->format("Y-m-d H:i:s");
 
-		$record['height'] = $_REQUEST['height'];
-		$record['weight'] = $_REQUEST['weight'];
-		$record['imc'] = 26;
+		//print_r($record);
 
-		print_r($record);
-		//save('recordimc', $record);
-
-		//header('location: index.php');
+		save('recordimc', $record);
+		header("location: view.php?idcustomers=".$record['customers_idcustomers']);
 	}
+}
+
+/**
+ *  Exclusão de um IMC
+ */
+function deleteimc($id = null) {
+
+	global $record;
+	$record = removeimc('recordimc', $id);
+
+	header("location: index.php");
 }
 
 ?>

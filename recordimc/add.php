@@ -7,13 +7,13 @@ addimc();
 
 <h2>Novo Registro de IMC</h2>
 
-<form action="add.php?>" method="post">
+<form action="add.php?id=<?php echo $_GET['id'] ?>" method="post">
   <hr />
   <div class="row">
 
     <div class="form-group col-md-2">
       <label for="name">ID Usuário</label>
-      <input type="text" class="form-control" name="record['customers_idcustomers']" value="<?php echo view($_GET['idcustomers']); ?>" disabled>
+      <input type="text" class="form-control" name="record['customers_idcustomers']" value="<?php echo $_GET['id'] ?>" disabled>
     </div>
 
     <div class="form-group col-md-2">
@@ -33,14 +33,14 @@ addimc();
 
     <div class="form-group col-md-3">
       <label for="campo3">Data de Cadastro</label>
-      <input type="text" class="form-control" name="record['created']" disabled>
+      <input type="text" class="form-control" name="record['daterecord']" disabled>
     </div>
   </div>
 
   <div id="actions" class="row">
     <div class="col-md-12">
       <button type="submit" class="btn btn-primary">Salvar</button>
-      <a href="view.php?idcustomers=<?php echo $customer['idcustomers']; ?>" class="btn btn-default">Cancelar</a>
+      <a href="view.php?idcustomers=<?php echo $_GET['id'] ?>" class="btn btn-default">Cancelar</a>
     </div>
   </div>
 </form>

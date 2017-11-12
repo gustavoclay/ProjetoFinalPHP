@@ -84,7 +84,7 @@ function save($table = null, $data = null) {
 	$columns = null;
 	$values = null;
 
-  	print_r($data);
+  	//print_r($data);
 
 	foreach ($data as $key => $value) {
 		$columns .= trim($key, "'") . ",";
@@ -232,6 +232,35 @@ return $found;
 function find_all_imc($table) {
 	return find_imc($table);
 }
+
+
+/**
+ *  Remove uma linha de uma tabela pelo ID do registro
+ */
+function removeimc( $table = null, $id = null ) {
+
+	$database = open_database();
+
+	try {
+		if ($id) {
+
+			$sql = "DELETE FROM " . $table . " WHERE idrecordimc = " . $id;
+			$result = $database->query($sql);
+
+			if ($result = $database->query($sql)) {
+				$_SESSION['message'] = "Registro Removido com Sucesso.";
+				$_SESSION['type'] = 'success';
+			}
+		}
+	} catch (Exception $e) {
+
+		$_SESSION['message'] = $e->GetMessage();
+		$_SESSION['type'] = 'danger';
+	}
+
+	close_database($database);
+}
+
 
 
 ?>
