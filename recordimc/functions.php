@@ -40,4 +40,26 @@ function indeximc() {
 	$records = find_all_imc('recordimc');
 }
 
+/**
+ *  Cadastro de IMC
+ */
+function addimc() {
+
+	if (!empty($_POST['idcustomer'])) {
+		$record['customers_idcustomers']= $_REQUEST['customers_idcustomers'];
+
+		$today = date_create('now', new DateTimeZone('America/Sao_Paulo'));
+		$record['daterecord'] = $today->format("Y-m-d H:i:s");
+
+		$record['height'] = $_REQUEST['height'];
+		$record['weight'] = $_REQUEST['weight'];
+		$record['imc'] = 26;
+
+		print_r($record);
+		//save('recordimc', $record);
+
+		//header('location: index.php');
+	}
+}
+
 ?>

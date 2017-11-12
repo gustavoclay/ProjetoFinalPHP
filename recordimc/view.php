@@ -12,6 +12,7 @@ viewimc($_GET['idcustomers']);
 			<h2>Usuário #<?php echo $customer['idcustomers']; ?></h2>
 		</div>
 		<div class="col-sm-6 text-right h2">
+			<a class="btn btn-primary" href="add.php?idcustomers=<?php echo $customer['idcustomers']; ?>"><i class="fa fa-plus"></i> Novo Registro de IMC</a>
 			<a href="index.php" class="btn btn-default">Voltar</a>
 		</div>
 	</div>
@@ -46,8 +47,6 @@ viewimc($_GET['idcustomers']);
 	<?php clear_messages(); ?>
 <?php endif; ?>
 
-<hr>
-
 <table class="table table-hover">
 	<thead>
 		<tr>
@@ -56,7 +55,7 @@ viewimc($_GET['idcustomers']);
 			<th>Peso</th>
 			<th>IMC</th>
 			<th>Registrado em</th>
-			<th>Opções</th>
+			<th class="text-center">Opções</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -68,7 +67,7 @@ viewimc($_GET['idcustomers']);
 					<td><?php echo $item['weight']; ?></td>
 					<td><?php echo $item['imc']; ?></td>
 					<td><?php echo $item['daterecord']; ?></td>
-					<td class="actions text-right">
+					<td class="actions text-center">
 						<a href="view.php?idcustomers=<?php echo $customer['idcustomers']; ?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>
 						<a href="edit.php?idcustomers=<?php echo $customer['idcustomers']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Editar</a>
 						<a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $customer['idcustomers']; ?>">
