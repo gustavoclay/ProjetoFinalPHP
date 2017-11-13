@@ -41,6 +41,15 @@
 							<li><a href="<?php echo BASEURL; ?>customers/add.php">Novo Usuário</a></li>
 						</ul>
 					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+							Controle de IMC <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="<?php echo BASEURL; ?>recordimc">Gerenciar IMC</a></li>
+							<li><a href="<?php echo BASEURL; ?>customers/imctable.php">Tabelas IMC</a></li>
+						</ul>
+					</li>
 				</ul>
 			</div><!--/.navbar-collapse -->
 		</div>

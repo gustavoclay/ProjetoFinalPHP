@@ -96,7 +96,7 @@ function save($table = null, $data = null) {
 	$values = rtrim($values, ',');
 
 	$sql = "INSERT INTO " . $table . " ($columns) " . " VALUES " . "($values);";
-	print_r($sql);
+	//print_r($sql);
 	try {
 		$database->query($sql);
 
