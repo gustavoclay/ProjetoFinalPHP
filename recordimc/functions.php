@@ -63,10 +63,11 @@ function addimc() {
 
 		$record['daterecord'] = $today->format("Y-m-d H:i:s");
 
-		print_r($record);
+		//print para debug
+		//print_r($record);
 
 		save('recordimc', $record);
-		//header("location: view.php?idcustomers=".$record['customers_idcustomers']);
+		header("location: view.php?idcustomers=".$record['customers_idcustomers']);
 	}
 }
 
@@ -80,5 +81,47 @@ function deleteimc($id = null) {
 
 	header("location: index.php");
 }
+
+/**
+ *	Atualizacao/Edicao de Registro de IMC
+ */
+function edit_imc() {
+
+	$now = date_create('now', new DateTimeZone('America/Sao_Paulo'));
+
+	if (isset($_GET['idrecordimc'])) {
+
+		$idrecordimc = $_GET['idrecordimc'];
+		print_r($idrecordimc);
+
+		if (isset($_POST['record'])) {
+			
+			$record = $_POST['record'];
+			$record['created'] = $now->format("Y-m-d H:i:s");
+			// Calcula IMC
+			foreach ($record as $key => $value) {
+				if ($key == "'height'") {
+					$he = $value;
+				} elseif ($key == "'weight'") {
+					$we = $value;
+				}
+			}
+			$record['imc'] = $we / ($he * $he);
+			print_r($record);
+
+			//update_imc('recordimc', $idrecordimc, $record);
+			//header("location: view.php?idcustomers=".$record['customers_idcustomers']);
+
+		} else {
+
+			global $record;
+			$record = find_imc('	recordimc', $idrecordimc);
+		}
+	} else {
+		header("location: view.php?idcustomers=".$record['customers_idcustomers']);
+
+	}
+}
+
 
 ?>

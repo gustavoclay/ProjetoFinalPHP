@@ -195,8 +195,8 @@ function find_imc ($table = null, $id = null) {
 				//$found = $result->fetch_assoc();
 				$found = array();
 				while ($row = $result->fetch_assoc()) {
-          			array_push($found, $row);
-      			}
+					array_push($found, $row);
+				}
 			}
 
 		} else {
@@ -261,6 +261,40 @@ function removeimc( $table = null, $id = null ) {
 	close_database($database);
 }
 
+/**
+ *  Atualiza um registro em uma tabela de IMC,  por ID
+ */
+function update_imc($table = null, $id = 0, $data = null) {
+
+	$database = open_database();
+
+	$items = null;
+
+	foreach ($data as $key => $value) {
+		$items .= trim($key, "'") . "='$value',";
+	}
+
+  // remove a ultima virgula
+	$items = rtrim($items, ',');
+
+	$sql  = "UPDATE " . $table;
+	$sql .= " SET $items";
+	$sql .= " WHERE idrecordimc=" . $id . ";";
+
+	try {
+		$database->query($sql);
+
+		$_SESSION['message'] = 'Registro atualizado com sucesso.';
+		$_SESSION['type'] = 'success';
+
+	} catch (Exception $e) {
+
+		$_SESSION['message'] = 'Nao foi possivel realizar a operacao.';
+		$_SESSION['type'] = 'danger';
+	}
+
+	close_database($database);
+}
 
 
 ?>
