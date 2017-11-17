@@ -68,7 +68,7 @@ viewimc($_GET['idcustomers']);
 					<td><?php echo $item['imc']; ?></td>
 					<td><?php echo $item['daterecord']; ?></td>
 					<td class="actions text-right">
-						<a href="edit.php?idrecordimc=<?php echo $item['idrecordimc']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Editar</a>
+						<a href="edit.php?idrecordimc=<?php echo $item['idrecordimc']; ?>&idcustomers=<?php echo $customer['idcustomers']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Editar</a>
 						<a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal1" data-record="<?php echo $item['idrecordimc']; ?>">
 							<i class="fa fa-trash"></i> Excluir
 						</a>

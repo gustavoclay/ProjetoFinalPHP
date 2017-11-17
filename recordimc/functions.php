@@ -7,6 +7,7 @@ $customers = null;
 $customer = null;
 $records = null;
 $record = null;
+$data = null;
 
 /**
  *  Visualização de um Cliente
@@ -30,6 +31,15 @@ function index() {
 function viewimc($idcustomers = null) {
 	global $record;
 	$record = find_imc('recordimc', $idcustomers);
+}
+
+/**
+ *  Visualização de um registro de imc
+ */
+function viewimcid($idrecordimc = null) {
+	global $record;
+	$record = find_imc_id('recordimc', $idrecordimc);
+	print_r($record);
 }
 
 /**
@@ -86,41 +96,32 @@ function deleteimc($id = null) {
  *	Atualizacao/Edicao de Registro de IMC
  */
 function edit_imc() {
+	$today = date_create('now', new DateTimeZone('America/Sao_Paulo'));
 
-	$now = date_create('now', new DateTimeZone('America/Sao_Paulo'));
+	$idrecordimc = $_GET['idrecordimc'];
 
-	if (isset($_GET['idrecordimc'])) {
+	$data = $_POST['data'];
+	print_r($data);
 
-		$idrecordimc = $_GET['idrecordimc'];
-		print_r($idrecordimc);
-
-		if (isset($_POST['record'])) {
-			
-			$record = $_POST['record'];
-			$record['created'] = $now->format("Y-m-d H:i:s");
-			// Calcula IMC
-			foreach ($record as $key => $value) {
-				if ($key == "'height'") {
-					$he = $value;
-				} elseif ($key == "'weight'") {
-					$we = $value;
-				}
-			}
-			$record['imc'] = $we / ($he * $he);
-			print_r($record);
-
-			//update_imc('recordimc', $idrecordimc, $record);
-			//header("location: view.php?idcustomers=".$record['customers_idcustomers']);
-
-		} else {
-
-			global $record;
-			$record = find_imc('	recordimc', $idrecordimc);
+		// Calcula IMC
+	foreach ($data as $key => $value) {
+		if ($key == "'height'") {
+			$he = $value;
+		} elseif ($key == "'weight'") {
+			$we = $value;
 		}
-	} else {
-		header("location: view.php?idcustomers=".$record['customers_idcustomers']);
-
 	}
+	$data['imc'] = $we / ($he * $he);
+
+	$data['daterecord'] = $today->format("Y-m-d H:i:s");
+
+			//print para debug
+	print_r($data);
+
+	update_imc('recordimc', $idrecordimc, $data);
+	header("location: view.php?idcustomers=".$_GET['idcustomers']);
+
+
 }
 
 

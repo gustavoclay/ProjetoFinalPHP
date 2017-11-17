@@ -297,4 +297,33 @@ function update_imc($table = null, $id = 0, $data = null) {
 }
 
 
+/**
+ * Pesquisa um Registro pelo ID em uma tabela - imc
+
+
+function find_imc_id ($table = null, $idrecordimc = null) {
+
+	$database = open_database();
+	$found = null;
+
+	try{
+		$sql = "SELECT * FROM " . $table . " WHERE idrecordimc= " . $idrecordimc;
+		$result = $database->query($sql);
+
+		if ($result->num_rows > 0) {
+			$found = $result->fetch_assoc();
+			/*$found = array();
+			while ($row = $result->fetch_assoc()) {
+				array_push($found, $row);
+			}*/
+		/*}
+	} catch (Exception $e) {
+		$_SESSION['message'] = $e->getMessage();
+		$_SESSION['type'] = 'danger';
+	}
+	close_database($database);
+	return $found;
+}
+*/
+
 ?>
