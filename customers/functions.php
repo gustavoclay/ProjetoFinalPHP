@@ -75,8 +75,11 @@ function view($idcustomers = null) {
 function delete($idcustomers = null) {
 
 	global $customer;
+	global $records;
+	$records = delete_imc_all('recordimc',$idcustomers);
 	$customer = remove('customers', $idcustomers);
-
+	//print_r($records);
+	//print_r($customer);
 	header('location: index.php');
 }
 

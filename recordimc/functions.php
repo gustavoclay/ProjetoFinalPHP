@@ -71,6 +71,8 @@ function addimc() {
 		}
 		$record['imc'] = $we / ($he * $he);
 
+		$record['category'] = category_imc($record['imc']);
+
 		$record['daterecord'] = $today->format("Y-m-d H:i:s");
 
 		//print para debug
@@ -117,6 +119,8 @@ function edit_imc() {
 			}
 			$data['imc'] = $we / ($he * $he);
 
+			$data['category'] = category_imc($data['imc']);
+
 			update_imc('recordimc', $idrecordimc, $data);
 			//debug
 			//print_r($data);
@@ -130,6 +134,29 @@ function edit_imc() {
 	}
 }
 
+/**
+*Verificar categoria do IMC
+**/
+function category_imc($imc = null){
+	if ($imc < 16) {
+		return "Baixo peso Grau III";
+	} elseif ($imc >= 16 && $imc < 17) {
+		return "Baixo peso Grau II";
+	} elseif ($imc >= 17 && $imc < 18.50) {
+		return "Baixo peso Grau I";
+	} elseif ($imc >= 18.50 && $imc < 25) {
+		return "Peso ideal";
+	} elseif ($imc >= 25 && $imc < 30) {
+		return "Sobrepeso";
+	} elseif ($imc >= 30 && $imc < 35) {
+		return "Obesidade Grau I";
+	} elseif ($imc >= 35 && $imc < 40) {
+		return "Obesidade Grau II";
+	} elseif ($imc >= 40) {
+		return "Obesidade Grau III";
+	}
+
+}
 
 
 ?>

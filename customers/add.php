@@ -13,12 +13,12 @@ add();
   <div class="row">
     <div class="form-group col-md-7">
       <label for="name">Nome</label>
-      <input type="text" class="form-control" name="customer['name']">
+      <input type="text" class="form-control" name="customer['name']" required>
     </div>
 
     <div class="form-group col-md-3">
       <label for="campo2">email</label>
-      <input type="text" class="form-control" name="customer['email']">
+      <input type="text" class="form-control" name="customer['email']" required>
     </div>
 
     <div class="form-group col-md-2">

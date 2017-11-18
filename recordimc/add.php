@@ -17,25 +17,14 @@ addimc();
     </div>
 
     <div class="form-group col-md-2">
-      <label for="name">Altura</label>
-      <input type="number" step="0.01"  class="form-control" name="record['height']">
+      <label for="name">Altura em metros</label>
+      <input type="number" step="0.01" placeholder="ex. 1.80" class="form-control" name="record['height']" required>
     </div>
 
     <div class="form-group col-md-2">
       <label for="campo2">Peso</label>
-      <input type="number" step="0.1" class="form-control" name="record['weight']">
+      <input type="number" step="0.01" placeholder="ex. 80.00" class="form-control" name="record['weight']" required>
     </div>
-
-    <div class="form-group col-md-2">
-      <label for="campo3">IMC</label>
-      <input type="number" step="0.1" class="form-control" name="record['imc']" disabled>
-    </div>
-
-    <div class="form-group col-md-3">
-      <label for="campo3">Data de Cadastro</label>
-      <input type="text" class="form-control" name="record['daterecord']" disabled>
-    </div>
-  </div>
 
   <div id="actions" class="row">
     <div class="col-md-12">

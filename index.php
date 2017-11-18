@@ -18,7 +18,7 @@
 					</div>
 					<div class="col-xs-12 text-center">
 						<br />
-						<p>Usuário</p>
+						<p>Usuários</p>
 					</div>
 				</div>
 			</a>
@@ -65,6 +65,35 @@
 				</div>
 			</a>
 		</div>
+
+		<div class="col-xs-6 col-sm-3 col-md-2">
+			<a href="<?php echo BASEURL; ?>imc/imctable.php" class="btn btn-default">
+				<div class="row">
+					<div class="col-xs-12 text-center">
+						<i class="fa fa-table fa-5x" aria-hidden="true"></i>
+					</div>
+					<div class="col-xs-12 text-center">
+						<br />
+						<p>Tabelas IMC</p>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+	<div class="row">
+		<hr>
+		<h2>IMC - Sistema para Registro de Controle de IMC</h1>
+		<p>O sistema foi projetado para cadastrar usuários e realizar o registro do seu peso e altura, e automaticamente calcular o índice de Massa Corporal. Os registros de IMC são guardados no banco de dados, assim como as informações do usuário para realizar o controle.</p>
+		<p>No Dashboard acima, há as seguintes opções: </p>
+		<ul>
+			<li>botão "Usuário": há as opções para realizar o registro e controle dos usuários.</li>
+			<li>botão "Controle de IMC": há as opções para realizar o registro e controle do IMC dos usuários cadastrados.</li>
+			<li>botão "O que é IMC?": há uma página explicando o que é o Índice de Massa Corporal e como este índice é utilizado.</li>
+			<li>botão "Como calcular o IMC?": há uma página explicando como calcular o Índice de Massa Corporal.</li>
+			<li>botão "Tabelas IMC": há uma página com as tabelas para verificar a categoria relacionada ao índice adquirido</li>
+		</ul>
+
+
 	</div>
 
 <?php else : ?>

@@ -13,6 +13,7 @@ viewimc($_GET['idcustomers']);
 		</div>
 		<div class="col-sm-6 text-right h2">
 			<a class="btn btn-primary" href="add.php?id=<?php echo $customer['idcustomers']; ?>"><i class="fa fa-plus"></i> Novo Registro de IMC</a>
+			<a class="btn btn-info" href="<?php echo BASEURL; ?>imc/imctable.php">Tabelas IMC</a>
 			<a href="index.php" class="btn btn-default">Voltar</a>
 		</div>
 	</div>
@@ -37,6 +38,7 @@ viewimc($_GET['idcustomers']);
 <hr>
 
 <h2>Controle de IMC</h2>
+*O metodo utilizado para definir a categoria do IMC é a <a href="<?php echo BASEURL; ?>/imc/imctable.php">tabela</a> indicada pela Organização Mundial da Saúde (OMS).
 <hr>
 
 <?php if (!empty($_SESSION['message'])) : ?>
@@ -54,6 +56,7 @@ viewimc($_GET['idcustomers']);
 			<th>Altura</th>
 			<th>Peso</th>
 			<th>IMC</th>
+			<th>Categoria</th>
 			<th>Registrado em</th>
 			<th class="text-center">Opções</th>
 		</tr>
@@ -66,6 +69,7 @@ viewimc($_GET['idcustomers']);
 					<td><?php echo $item['height']; ?></td>
 					<td><?php echo $item['weight']; ?></td>
 					<td><?php echo $item['imc']; ?></td>
+					<td><?php echo $item['category']; ?></td>
 					<td><?php echo $item['daterecord']; ?></td>
 					<td class="actions text-center">
 						<a href="edit.php?idrecordimc=<?php echo $item['idrecordimc']; ?>&idcustomers=<?php echo $customer['idcustomers']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Editar</a>

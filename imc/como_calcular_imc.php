@@ -12,7 +12,7 @@ require_once('functions.php');
 	<p><strong>IMC</strong> = 80 &divide; 1,80<sup>2</sup></p> 
 	<p><strong>IMC</strong> = 80 &divide; 3,24</p> 
 	<p><strong>IMC</strong> = 24,69</p>
-	<p>De acordo com a <a href="<?php echo BASEURL; ?>recordimc/imctable.php" title="C&aacute;lculo IMC">tabela de IMC</a>, voc&ecirc; est&aacute; no seu <strong>peso ideal</strong>.</p>
+	<p>De acordo com a <a href="<?php echo BASEURL; ?>imc/imctable.php" title="C&aacute;lculo IMC">tabela de IMC</a>, voc&ecirc; est&aacute; no seu <strong>peso ideal</strong>.</p>
 </div> 
 
 <p>Outro exemplo, se voc&ecirc; <em>pesa</em> 70kg e <em>mede</em> 1,50m, o <em>c&aacute;lculo</em> do <strong>IMC</strong> ser&aacute;:</p> 
@@ -20,7 +20,7 @@ require_once('functions.php');
 	<p><strong>IMC</strong> = 70 &divide; 1,50<sup>2</sup></p> 
 	<p><strong>IMC</strong> = 70 &divide; 2,25</p> 
 	<p><strong>IMC</strong> = 31,11</p>
-	<p>De acordo com a <a href="<?php echo BASEURL; ?>recordimc/imctable.php"  title="C&aacute;lculo IMC">tabela de IMC</a>, voc&ecirc; est&aacute; com <strong>obesidade de n&iacute;vel 1</strong>.</p>
+	<p>De acordo com a <a href="<?php echo BASEURL; ?>imc/imctable.php"  title="C&aacute;lculo IMC">tabela de IMC</a>, voc&ecirc; est&aacute; com <strong>obesidade de n&iacute;vel 1</strong>.</p>
 </div>
 
 <?php include(FOOTER_TEMPLATE); ?>

@@ -170,7 +170,7 @@ function remove( $table = null, $id = null ) {
 		$_SESSION['message'] = $e->GetMessage();
 		$_SESSION['type'] = 'danger';
 	}
-
+	//return($sql);
 	close_database($database);
 }
 
@@ -298,34 +298,31 @@ function update_imc($table = null, $id = 0, $data = null) {
 	close_database($database);
 }
 
-
 /**
- * Pesquisa um Registro pelo ID em uma tabela - imc
-
-
-function find_imc_id ($table = null, $idrecordimc = null) {
+ *  Remove uma linha de uma tabela pelo ID do registro
+ */
+function delete_imc_all( $table = null, $id = null ) {
 
 	$database = open_database();
-	$found = null;
 
-	try{
-		$sql = "SELECT * FROM " . $table . " WHERE idrecordimc= " . $idrecordimc;
-		$result = $database->query($sql);
+	try {
+		if ($id) {
 
-		if ($result->num_rows > 0) {
-			$found = $result->fetch_assoc();
-			/*$found = array();
-			while ($row = $result->fetch_assoc()) {
-				array_push($found, $row);
-			}*/
-		/*}
+			$sql = "DELETE FROM " . $table . " WHERE customers_idcustomers = " . $id;
+			$result = $database->query($sql);
+
+			if ($result = $database->query($sql)) {
+				$_SESSION['message'] = "Registro Removido com Sucesso.";
+				$_SESSION['type'] = 'success';
+			}
+		}
 	} catch (Exception $e) {
-		$_SESSION['message'] = $e->getMessage();
+
+		$_SESSION['message'] = $e->GetMessage();
 		$_SESSION['type'] = 'danger';
 	}
+	//return($sql);
 	close_database($database);
-	return $found;
 }
-*/
 
 ?>
