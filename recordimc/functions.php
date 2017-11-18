@@ -96,33 +96,40 @@ function deleteimc($id = null) {
  *	Atualizacao/Edicao de Registro de IMC
  */
 function edit_imc() {
-	$today = date_create('now', new DateTimeZone('America/Sao_Paulo'));
 
-	$idrecordimc = $_GET['idrecordimc'];
+	$now = date_create('now', new DateTimeZone('America/Sao_Paulo'));
 
-	$data = $_POST['data'];
-	print_r($data);
+	if (isset($_GET['idrecordimc'])) {
 
-		// Calcula IMC
-	foreach ($data as $key => $value) {
-		if ($key == "'height'") {
-			$he = $value;
-		} elseif ($key == "'weight'") {
-			$we = $value;
+		$idrecordimc = $_GET['idrecordimc'];
+
+		if (isset($_POST['data'])) {
+
+			$data = $_POST['data'];
+			$data['daterecord'] = $now->format("Y-m-d H:i:s");
+			// Calcula IMC
+			foreach ($data as $key => $value) {
+				if ($key == "height") {
+					$he = $value;
+				} elseif ($key == "weight") {
+					$we = $value;
+				}
+			}
+			$data['imc'] = $we / ($he * $he);
+
+			update_imc('recordimc', $idrecordimc, $data);
+			//debug
+			//print_r($data);
+			//print_r($idrecordimc);
+			header('location: index.php');
+		} else {
+			print "Alteração do registro ". $_GET['idrecordimc'];
 		}
+	} else {
+		header('location: index.php');
 	}
-	$data['imc'] = $we / ($he * $he);
-
-	$data['daterecord'] = $today->format("Y-m-d H:i:s");
-
-			//print para debug
-	print_r($data);
-
-	update_imc('recordimc', $idrecordimc, $data);
-	header("location: view.php?idcustomers=".$_GET['idcustomers']);
-
-
 }
+
 
 
 ?>

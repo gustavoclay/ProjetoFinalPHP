@@ -280,10 +280,12 @@ function update_imc($table = null, $id = 0, $data = null) {
 	$sql  = "UPDATE " . $table;
 	$sql .= " SET $items";
 	$sql .= " WHERE idrecordimc=" . $id . ";";
-
+	//print_r($sql);
+	//debug
 	try {
 		$database->query($sql);
-
+		//print_r($database);
+		//debug
 		$_SESSION['message'] = 'Registro atualizado com sucesso.';
 		$_SESSION['type'] = 'success';
 

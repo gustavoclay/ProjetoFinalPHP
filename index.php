@@ -37,6 +37,34 @@
 				</div>
 			</a>
 		</div>
+
+		<div class="col-xs-6 col-sm-3 col-md-2">
+			<a href="recordimc" class="btn btn-default">
+				<div class="row">
+					<div class="col-xs-12 text-center">
+						<i class="fa fa-heartbeat fa-5x" aria-hidden="true"></i>
+					</div>
+					<div class="col-xs-12 text-center">
+						<br />
+						<p>O que é IMC?</p>
+					</div>
+				</div>
+			</a>
+		</div>
+
+		<div class="col-xs-6 col-sm-3 col-md-2">
+			<a href="recordimc" class="btn btn-default">
+				<div class="row">
+					<div class="col-xs-12 text-center">
+						<i class="fa fa-heartbeat fa-5x" aria-hidden="true"></i>
+					</div>
+					<div class="col-xs-12 text-center">
+						<br />
+						<p>Como calcular o IMC?</p>
+					</div>
+				</div>
+			</a>
+		</div>
 	</div>
 
 <?php else : ?>
