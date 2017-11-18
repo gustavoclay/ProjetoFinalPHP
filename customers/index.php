@@ -45,7 +45,7 @@ index();
 					<td><?php echo $customer['name']; ?></td>
 					<td><?php echo $customer['email']; ?></td>
 					<td><?php echo $customer['modified']; ?></td>
-					<td class="actions text-right">
+					<td class="actions text-center">
 						<a href="view.php?idcustomers=<?php echo $customer['idcustomers']; ?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>
 						<a href="edit.php?idcustomers=<?php echo $customer['idcustomers']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Editar</a>
 						<a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $customer['idcustomers']; ?>">

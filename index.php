@@ -39,10 +39,10 @@
 		</div>
 
 		<div class="col-xs-6 col-sm-3 col-md-2">
-			<a href="recordimc" class="btn btn-default">
+			<a href="<?php echo BASEURL; ?>imc/o_que_e_imc.php" class="btn btn-default">
 				<div class="row">
 					<div class="col-xs-12 text-center">
-						<i class="fa fa-heartbeat fa-5x" aria-hidden="true"></i>
+						<i class="fa fa-stethoscope fa-5x" aria-hidden="true"></i>
 					</div>
 					<div class="col-xs-12 text-center">
 						<br />
@@ -53,10 +53,10 @@
 		</div>
 
 		<div class="col-xs-6 col-sm-3 col-md-2">
-			<a href="recordimc" class="btn btn-default">
+			<a href="<?php echo BASEURL; ?>imc/como_calcular_imc.php" class="btn btn-default">
 				<div class="row">
 					<div class="col-xs-12 text-center">
-						<i class="fa fa-heartbeat fa-5x" aria-hidden="true"></i>
+						<i class="fa fa-calculator fa-5x" aria-hidden="true"></i>
 					</div>
 					<div class="col-xs-12 text-center">
 						<br />
