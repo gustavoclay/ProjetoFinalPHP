@@ -31,3 +31,8 @@ Servidor Web
 
 - Bootstrap V.3.3.7
 - FontAwesome V.4.7.0
+
+#Configurar do banco de dados:
+
+O script para criação do banco de dados está na pasta "/database" como "script_bd.sql".
+O script sql para popular a tabela de usuários afim de teste está na pasta "/database" como "record_customers.sql".
